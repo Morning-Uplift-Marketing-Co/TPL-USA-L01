@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "fusionmcp": {
+      "enabled": true
+    }
+  }
+}
