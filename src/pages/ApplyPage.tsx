@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { getClickId, trackFormStart, trackFormStep, trackFormSubmit, trackConversion } from '../lib/tracking';
 
 declare global {
   interface Window {
@@ -13,28 +12,6 @@ export default function ApplyPage() {
       aid: '14881',
       template: 'fresh',
       ref: window.location.hostname,
-      click_id: getClickId(),
-
-      onFormLoad: function () {
-        trackFormStart();
-      },
-
-      onStepChange: function (step: number) {
-        trackFormStep(step);
-      },
-
-      onSubmit: function () {
-        trackFormSubmit();
-      },
-
-      onSuccess: function (data: {
-        type: string;
-        lead_id: string;
-        price?: number;
-        created?: string;
-      }) {
-        trackConversion(data);
-      },
     };
 
     const script = document.createElement('script');
