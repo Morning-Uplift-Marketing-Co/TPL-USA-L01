@@ -48,11 +48,8 @@ export default function Hero({ onOpenLegal: _onOpenLegal }: HeroProps) {
       return;
     }
     setZipError('');
-    if (isExternal) {
-      window.location.href = ctaHref;
-    } else {
-      navigate(ctaHref);
-    }
+    const url = `/apply.html?zip=${zip}`;
+    window.location.href = url;
   };
 
   return (
@@ -135,21 +132,12 @@ export default function Hero({ onOpenLegal: _onOpenLegal }: HeroProps) {
               </form>
 
               <div className="mt-4">
-                {isExternal ? (
-                  <a
-                    href={ctaHref}
-                    className="inline-flex items-center gap-2 text-teal-200 text-sm font-medium hover:text-white transition-colors"
-                  >
-                    Continue without ZIP code &rarr;
-                  </a>
-                ) : (
-                  <Link
-                    to={ctaHref}
-                    className="inline-flex items-center gap-2 text-teal-200 text-sm font-medium hover:text-white transition-colors"
-                  >
-                    Continue without ZIP code &rarr;
-                  </Link>
-                )}
+                <a
+                  href="/apply.html"
+                  className="inline-flex items-center gap-2 text-teal-200 text-sm font-medium hover:text-white transition-colors"
+                >
+                  Continue without ZIP code &rarr;
+                </a>
               </div>
             </div>
 

@@ -33,11 +33,8 @@ export default function Header() {
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const ctaHref = config.ctaHref;
   const ctaLabel = config.cta;
   const brand = config.brand;
-
-  const isExternal = ctaHref.startsWith('http');
 
   return (
     <>
@@ -91,21 +88,12 @@ export default function Header() {
                 <Phone size={15} />
                 +1-800-232-7562
               </a>
-              {isExternal ? (
-                <a
-                  href={ctaHref}
-                  className="bg-amber-500 hover:bg-amber-600 text-white text-sm font-semibold px-5 py-2.5 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 active:scale-95"
-                >
-                  {ctaLabel}
-                </a>
-              ) : (
-                <Link
-                  to={ctaHref}
-                  className="bg-amber-500 hover:bg-amber-600 text-white text-sm font-semibold px-5 py-2.5 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 active:scale-95"
-                >
-                  {ctaLabel}
-                </Link>
-              )}
+              <a
+                href="/apply.html"
+                className="bg-amber-500 hover:bg-amber-600 text-white text-sm font-semibold px-5 py-2.5 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 active:scale-95"
+              >
+                {ctaLabel}
+              </a>
             </div>
 
             <button
@@ -138,21 +126,12 @@ export default function Header() {
                   <Phone size={15} />
                   +1-800-232-7562
                 </a>
-                {isExternal ? (
-                  <a
-                    href={ctaHref}
-                    className="block w-full text-center bg-amber-500 hover:bg-amber-600 text-white text-sm font-semibold px-5 py-3 rounded-xl transition-all"
-                  >
-                    {ctaLabel} (No Credit Impact)
-                  </a>
-                ) : (
-                  <Link
-                    to={ctaHref}
-                    className="block w-full text-center bg-amber-500 hover:bg-amber-600 text-white text-sm font-semibold px-5 py-3 rounded-xl transition-all"
-                  >
-                    {ctaLabel} (No Credit Impact)
-                  </Link>
-                )}
+                <a
+                  href="/apply.html"
+                  className="block w-full text-center bg-amber-500 hover:bg-amber-600 text-white text-sm font-semibold px-5 py-3 rounded-xl transition-all"
+                >
+                  {ctaLabel} (No Credit Impact)
+                </a>
               </div>
             </div>
           </div>

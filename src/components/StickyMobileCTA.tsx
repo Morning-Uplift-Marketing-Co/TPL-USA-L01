@@ -14,9 +14,7 @@ export default function StickyMobileCTA() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const ctaHref = config.ctaHref;
   const ctaLabel = config.cta;
-  const isExternal = ctaHref.startsWith('http');
 
   return (
     <div
@@ -29,21 +27,12 @@ export default function StickyMobileCTA() {
           <p className="text-xs font-semibold text-gray-800 leading-tight">Pet loans from $200–$10,000</p>
           <p className="text-xs text-gray-500 leading-tight">Safe for your credit · No hard pull</p>
         </div>
-        {isExternal ? (
-          <a
-            href={ctaHref}
-            className="shrink-0 bg-amber-500 hover:bg-amber-600 active:scale-95 text-white text-sm font-bold px-5 py-2.5 rounded-xl transition-all duration-200"
-          >
-            {ctaLabel}
-          </a>
-        ) : (
-          <Link
-            to={ctaHref}
-            className="shrink-0 bg-amber-500 hover:bg-amber-600 active:scale-95 text-white text-sm font-bold px-5 py-2.5 rounded-xl transition-all duration-200"
-          >
-            {ctaLabel}
-          </Link>
-        )}
+        <a
+          href="/apply.html"
+          className="shrink-0 bg-amber-500 hover:bg-amber-600 active:scale-95 text-white text-sm font-bold px-5 py-2.5 rounded-xl transition-all duration-200"
+        >
+          {ctaLabel}
+        </a>
       </div>
     </div>
   );
